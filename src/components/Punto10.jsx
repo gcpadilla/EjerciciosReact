@@ -23,7 +23,9 @@ class Punto10 extends Component {
 	componentDidMount  () {
 		const api = "https://newsapi.org/v2/top-headlines?";
 		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
-		axios.get(url).then((res) => {
+		axios
+		.get(url)
+		.then((res) => {
 			const dat = res.data.articles;
 			this.setState({ data: dat });
 			this.setState({ imagen1: this.state.data[5].urlToImage });
@@ -32,8 +34,6 @@ class Punto10 extends Component {
 			this.setState({ titulo1: this.state.data[5].title });
 			this.setState({ titulo2: this.state.data[10].title });
 			this.setState({ titulo3: this.state.data[13].title });
-			
-			//console.log(dat)
 		});
 	}
 
@@ -59,10 +59,6 @@ class Punto10 extends Component {
 		});
 		ev.preventDefault();
 	};
-
-	componentDidUpdate() {
-													//console.log(this.state.data[0].urlToImage);
-												}
 
 	render() {
 
