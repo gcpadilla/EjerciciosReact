@@ -110,7 +110,7 @@ const Nav = () => {
 								<div className="dropdown-menu bg-info">
 									<div className="dropdown-divider"></div>
 									<Link className="dropdown-item" to="/Punto7HooksMondo">
-										p7HookMondo
+										p7HookMongo
 									</Link>
 									<div className="dropdown-divider"></div>
 									<Link className="dropdown-item" to="/Punto8">
