@@ -21,7 +21,7 @@ class Punto10 extends Component {
 	}
 
 	componentDidMount  () {
-		const api = "http://newsapi.org/v2/top-headlines?";
+		const api = "https://newsapi.org/v2/top-headlines?";
 		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
 		axios.get(url).then((res) => {
 			const dat = res.data.articles;
@@ -45,7 +45,7 @@ class Punto10 extends Component {
 	
 
 	handleSubmit = (ev) => {
-		const api = "http://newsapi.org/v2/top-headlines?";
+		const api = "https://newsapi.org/v2/top-headlines?";
 		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
 		axios.get(url).then((res) => {
 			const dat = res.data.articles;
