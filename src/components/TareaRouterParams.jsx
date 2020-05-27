@@ -30,7 +30,7 @@ class TreaRouterParams extends Component {
 	};
 
 	Handleboton = () => {
-		const jsonplaceholder = "http://jsonplaceholder.typicode.com/posts/";
+		const jsonplaceholder = "https://jsonplaceholder.typicode.com/posts/";
 		const url = `${jsonplaceholder}${this.state.userid}`;
 		//console.log(url);
 
