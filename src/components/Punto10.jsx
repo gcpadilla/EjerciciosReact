@@ -26,7 +26,13 @@ class Punto10 extends Component {
 		
 		try {
 			await axios
-		.get(url)
+		.get(url,{
+			header:{
+				'Content-Type': 'application/json',
+				'X-Requested-With': 'XMLHttpRequest',
+				'Access-Control-Allow-Origin': '*'
+			}
+		})
 		.then((res) => {
 			const dat = res.data.articles;
 			this.setState({ data: dat });
