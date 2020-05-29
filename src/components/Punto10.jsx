@@ -20,10 +20,12 @@ class Punto10 extends Component {
 		};
 	}
 
-	componentDidMount  () {
-		const api = "https://newsapi.org/v2/top-headlines?/";
+	traer = async () => {
+		const api = "https://newsapi.org/v2/top-headlines?/*";
 		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
-		axios
+		
+		try {
+			await axios
 		.get(url)
 		.then((res) => {
 			const dat = res.data.articles;
@@ -35,6 +37,13 @@ class Punto10 extends Component {
 			this.setState({ titulo2: this.state.data[10].title });
 			this.setState({ titulo3: this.state.data[13].title });
 		});
+		} catch (error) {
+			console.log("Error traer")
+		}
+	}
+
+	componentDidMount  () {
+		this.traer()
 	}
 
 	handleChange = (ev) => {
@@ -45,18 +54,7 @@ class Punto10 extends Component {
 	
 
 	handleSubmit = (ev) => {
-		const api = "https://newsapi.org/v2/top-headlines?/";
-		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
-		axios.get(url).then((res) => {
-			const dat = res.data.articles;
-			this.setState({ data: dat });
-			this.setState({ imagen1: this.state.data[5].urlToImage });
-			this.setState({ imagen2: this.state.data[10].urlToImage });
-			this.setState({ imagen3: this.state.data[13].urlToImage });
-			this.setState({ titulo1: this.state.data[5].title });
-			this.setState({ titulo2: this.state.data[10].title });
-			this.setState({ titulo3: this.state.data[13].title });
-		});
+		this.traer()
 		ev.preventDefault();
 	};
 
