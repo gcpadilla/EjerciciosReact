@@ -21,16 +21,15 @@ class Punto10 extends Component {
 	}
 
 	traer = async () => {
-		const api = "https://newsapi.org/v2/top-headlines?/*";
+		const api = "https://newsapi.org/v2/top-headlines?/";
 		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
 		
 		try {
 			await axios
 		.get(url,{
 			header:{
-				'Content-Type': 'application/json',
 				'X-Requested-With': 'XMLHttpRequest',
-				'Access-Control-Allow-Origin': 'https://newsapi.org'
+				'Access-Control-Allow-Origin': url
 			}
 		})
 		.then((res) => {
@@ -44,7 +43,7 @@ class Punto10 extends Component {
 			this.setState({ titulo3: this.state.data[13].title });
 		});
 		} catch (error) {
-			console.log("Error traer")
+			console.log("Error al traer")
 		}
 	}
 
