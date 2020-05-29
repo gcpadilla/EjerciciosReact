@@ -30,7 +30,7 @@ class Punto10 extends Component {
 			header:{
 				'Content-Type': 'application/json',
 				'X-Requested-With': 'XMLHttpRequest',
-				'Access-Control-Allow-Origin': '*'
+				'Access-Control-Allow-Origin': 'https://newsapi.org'
 			}
 		})
 		.then((res) => {
