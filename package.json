@@ -2,7 +2,11 @@
   "name": "ejercicios",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  
+  "proxy": {
+    "local": "http://localhost:3001",
+    "netlify": "https://netlify-react-ejercicios.netlify.app/"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
