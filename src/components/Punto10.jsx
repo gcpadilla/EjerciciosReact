@@ -21,17 +21,19 @@ class Punto10 extends Component {
 	}
 
 	traer = async () => {
-		const api = "https://newsapi.org/v2/top-headlines?/";
+		const api = "https://newsapi.org/v2/top-headlines?";
 		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
+		//const origin = "https://netlify-react-ejercicios.netlify.app/"
 		
 		try {
 			await axios
-		.get(url,{
-			header:{
-				'X-Requested-With': 'XMLHttpRequest',
-				'Access-Control-Allow-Origin': url
-			}
-		})
+		.get(url
+		// 	,{
+		// 	header:{
+		// 		'Access-Control-Allow-Origin': {origin}
+		// 	}
+		// }
+		)
 		.then((res) => {
 			const dat = res.data.articles;
 			this.setState({ data: dat });
