@@ -34,6 +34,7 @@ class Punto10 extends Component {
 		})
 		.then((res) => {
 			const dat = res.data.articles;
+			console.log(dat)
 			this.setState({ data: dat });
 			this.setState({ imagen1: this.state.data[5].urlToImage });
 			this.setState({ imagen2: this.state.data[10].urlToImage });
