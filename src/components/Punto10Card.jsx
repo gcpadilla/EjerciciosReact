@@ -12,7 +12,7 @@ const Punto10Card = (props) => {
 				<div className="col-12">
 					<section className="m-3">
 						<div
-							className="card border border-dark overflow-auto averhiden"
+							className="card overflow-auto "
 							style={{ width: "320px", height: "400px" }}
 						>
 							<img
