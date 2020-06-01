@@ -110,33 +110,33 @@ const Nav = () => {
 								<div className="dropdown-menu bg-info">
 									<div className="dropdown-divider"></div>
 									<Link className="dropdown-item" to="/Punto7HooksMondo">
-										p7HookMondo
+										p7HookMongo
 									</Link>
 									<div className="dropdown-divider"></div>
-									<Link className="dropdown-item" to="/Punto8">
+									<Link className="dropdown-item" to="/">
 										Ejercicio 14
 									</Link>
 									<div className="dropdown-divider"></div>
-									<Link className="dropdown-item" to="/Punto9">
+									<Link className="dropdown-item" to="/">
 										Ejercicio 15
 									</Link>
 									<div className="dropdown-divider"></div>
-									<Link className="dropdown-item" to="/Punto10">
+									<Link className="dropdown-item" to="/">
 										Ejercicio 16
 									</Link>
 									<div className="dropdown-divider"></div>
 									<Link
 										className="dropdown-item"
-										to="/TareaRouterParams/15?background=rgba(65,65,65,0.5)&width=100&textcolor=white"
+										to="/T"
 									>
 										Ejercicio 17
 									</Link>
 									<div className="dropdown-divider"></div>
-									<Link className="dropdown-item" to="/Punto7Hooks">
+									<Link className="dropdown-item" to="/">
 										Ejercicio 18
 									</Link>
 									<div className="dropdown-divider"></div>
-									<Link className="dropdown-item" to="/express">
+									<Link className="dropdown-item" to="/">
 										ejercicio 19
 									</Link>
 								</div>

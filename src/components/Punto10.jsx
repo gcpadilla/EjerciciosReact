@@ -20,11 +20,21 @@ class Punto10 extends Component {
 		};
 	}
 
-	componentDidMount  () {
-		const api = "http://newsapi.org/v2/top-headlines?";
+	traer = async () => {
+		const api = "https://newsapi.org/v2/top-headlines?";
 		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
-		axios.get(url).then((res) => {
+		const origin = "https://netlify-react-ejercicios.netlify.app/"
+		
+		try {
+			await axios
+		.get(url,{
+			header:{
+				'Access-Control-Allow-Origin': {origin}
+			}
+		})
+		.then((res) => {
 			const dat = res.data.articles;
+			console.log(dat)
 			this.setState({ data: dat });
 			this.setState({ imagen1: this.state.data[5].urlToImage });
 			this.setState({ imagen2: this.state.data[10].urlToImage });
@@ -32,9 +42,14 @@ class Punto10 extends Component {
 			this.setState({ titulo1: this.state.data[5].title });
 			this.setState({ titulo2: this.state.data[10].title });
 			this.setState({ titulo3: this.state.data[13].title });
-			
-			//console.log(dat)
 		});
+		} catch (error) {
+			console.log("Error al traer")
+		}
+	}
+
+	componentDidMount  () {
+		this.traer()
 	}
 
 	handleChange = (ev) => {
@@ -45,24 +60,9 @@ class Punto10 extends Component {
 	
 
 	handleSubmit = (ev) => {
-		const api = "http://newsapi.org/v2/top-headlines?";
-		const url = `${api}${this.state.country}${this.state.category}${this.state.language}${this.state.apikey}`;
-		axios.get(url).then((res) => {
-			const dat = res.data.articles;
-			this.setState({ data: dat });
-			this.setState({ imagen1: this.state.data[5].urlToImage });
-			this.setState({ imagen2: this.state.data[10].urlToImage });
-			this.setState({ imagen3: this.state.data[13].urlToImage });
-			this.setState({ titulo1: this.state.data[5].title });
-			this.setState({ titulo2: this.state.data[10].title });
-			this.setState({ titulo3: this.state.data[13].title });
-		});
+		this.traer()
 		ev.preventDefault();
 	};
-
-	componentDidUpdate() {
-													//console.log(this.state.data[0].urlToImage);
-												}
 
 	render() {
 

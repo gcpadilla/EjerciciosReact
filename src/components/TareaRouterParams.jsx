@@ -30,7 +30,7 @@ class TreaRouterParams extends Component {
 	};
 
 	Handleboton = () => {
-		const jsonplaceholder = "http://jsonplaceholder.typicode.com/posts/";
+		const jsonplaceholder = "https://jsonplaceholder.typicode.com/posts/";
 		const url = `${jsonplaceholder}${this.state.userid}`;
 		//console.log(url);
 
@@ -55,7 +55,6 @@ class TreaRouterParams extends Component {
 				{this.props.match.params.userid ? "" : <Redirect to="/" />}
 				<div className="container">
 					<div className="card mt-3 text-dark">
-						{/* <img src="..." className="card-img-top" alt="..." /> */}
 						<div
 							className="card-body"
 							style={{

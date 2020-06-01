@@ -111,7 +111,7 @@ const Punto7Hooks = () => {
   return (
     <>
       <h3 className="text-center mt-3">
-        Administrador pacientes de veterinaria con mondo
+        Administrador pacientes de veterinaria con mongo
       </h3>
       <div className="container sombra">
         <div className="row m-3 ">
