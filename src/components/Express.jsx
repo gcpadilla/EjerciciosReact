@@ -16,6 +16,7 @@ const Express = () => {
 
   //FUNCIONES-------------------
 
+  
   const traer = async () => {
     await axios.get(`/api/v1/empleados`).then((res) => {
       const data = res.data;
